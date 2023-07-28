@@ -1,0 +1,48 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 Design Critique\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ri232\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 Overall, I thought their program was well designed. The model, view, and controller generally functioned independently, and interfaces were flexible in their implementation. The structure of the command package, which contained\
+Abstract classes for color transformation and filter, both extending the Command interface, made it easy to decide how to implement the mosaicking command. The view was also very straight-forward, only containing data necessary to the UI. One design choice I didn\'92t understand was why an image was different from an image model. Although, I didn\'92t have much trouble implementing the mosaicking feature in the model package. \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+Implementation Critique\
+\
+
+\f1\b0 The code was generally implemented well and in an easy-to-understand way. \
+One area of improvement would be reduce some of the code duplication in the Image\
+Class. Many of the methods in Image.java, such as greyscale() or brighten() contained a \
+Nested for-loop. This implementation could be more abstract if the macro method contained\
+These loops, rather than the command-specific methods. 
+\f0\b \
+\
+Documentation Critique\
+\
+
+\f1\b0 For the documentation that did exist, the purpose statements were concise and gave us \
+A good understanding of why the method exists. Some methods \'97mostly in JFrameView.java\'97 only\
+Had a one line comment. It\'92s helpful to see the info about parameters and return data in the javadoc comments,\
+so understanding these methods took longer than the method with javadocs. 
+\f0\b \
+\
+Design Strengths and Limitations\
+
+\f1\b0 Again, the model, view and controller were not tightly coupled, and methods generally accomplished a simple task. Most of the code was well documented and\
+easy to read. One limitation came when we needed to add a mosaicking-specific method in the Image class, as stated above. Having a method that looped through\
+a 2d-array of pixels would have been handy for this new feature. 
+\f0\b \
+\
+Suggestions\
+
+\f1\b0 An easy improvement to make would be adding javadoc comments to all public methods. Having each command class call back to the ImageImpl class\
+may not be necessary, but nonetheless, the program overall was easy to understand, well designed, clean, which made our job of implementing mosaicking \
+pretty straightforward. \
+}
