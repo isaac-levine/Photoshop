@@ -9,3 +9,5 @@ This image editor supports reading/writing images to local machine, and the foll
   - Mosaic
   - Sepia
   - Sharpen
+
+
